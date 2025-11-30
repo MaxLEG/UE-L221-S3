@@ -235,8 +235,8 @@ h2 {
 .form_UE_L221 input[type="tel"],
 .form_UE_L221 select {
   display: block;
-  width: 300px;
-  margin-left: 15px;
+  width: 100%;
+  margin-left: 0;
   margin-bottom: 15px;
   padding: 10px;
   border: 1px solid #ccc;
@@ -259,4 +259,62 @@ h2 {
 .form_UE_L221:hover #video-interface-container {
   opacity: 1;
   transition: opacity 1.5s ease 0.3s;
+}
+
+/* styles de l'interface video JS  - CSS form_UE_L221
+****************************************/
+#video-interface-container {
+  text-align: center;
+  padding: 0 20px;
+  margin-top: 30px;
+}
+
+.button-js-element {
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  margin: 10px auto;
+  display: block;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button-js-element:hover {
+  transform: scale(1.05);
+}
+
+.btn-show {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+
+.btn-hide {
+  background-color: var(--secondary-color);
+  color: var(--white-color);
+}
+
+.video-js-element,
+.button-js-element.btn-hide {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  pointer-events: none;
+  transition: opacity 0.5s ease-out, max-height 0.8s ease-in-out,
+    transform 0.5s ease;
+  transform: translateY(-20px);
+  width: 100%;
+}
+
+.video-js-element.is-visible,
+.button-js-element.btn-hide.is-visible {
+  opacity: 1;
+  max-height: 500px;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+/* iframe prend la largeur de son conteneur visible */
+.video-js-element.is-visible iframe {
+  width: 100% !important;
+  height: 315px; /* conserver la hauter de YouTube */
 }
