@@ -268,7 +268,7 @@ h2 {
   padding: 0 20px;
   margin-top: 30px;
 }
-
+/* style pour des boutons */
 .button-js-element {
   padding: 10px 20px;
   font-size: 1.1rem;
@@ -279,7 +279,7 @@ h2 {
   display: block;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
-
+/* animation au survol */
 .button-js-element:hover {
   transform: scale(1.05);
 }
@@ -293,7 +293,7 @@ h2 {
   background-color: var(--secondary-color);
   color: var(--white-color);
 }
-
+/* etat 'chache' pour la vidéo et le btn 2 */
 .video-js-element,
 .button-js-element.btn-hide {
   opacity: 0;
@@ -305,7 +305,7 @@ h2 {
   transform: translateY(-20px);
   width: 100%;
 }
-
+/* etat visible */
 .video-js-element.is-visible,
 .button-js-element.btn-hide.is-visible {
   opacity: 1;
